@@ -11,7 +11,15 @@ body{
 
 .header{
     display: flex;
-    padding: 20px;
+    background: #5C2A9D;
+    position: fixed;
+    align-items:center;
+    height: auto;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 10px;
+    transition: top .5s;    
 }
 
 .logo{
@@ -19,14 +27,14 @@ body{
     height: 30px;
 }
 
-.navs ul{
+nav ul{
     display: flex;
     list-style: none;
 }
 
-.navs li{
+nav li{
     margin-right: 20px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .spacer{
@@ -37,8 +45,13 @@ body{
     display: none;
 }
 
+.logo svg{
+    width: 50px;
+    height: 50px;
+}
+
 a {
-    color: black;
+    color: #fff;
     font-size: 1.2rem;
 }
 
@@ -46,27 +59,34 @@ a:hover{
     text-decoration: none;
 }
 
+
 @media screen and (max-width: 650px){
-    .hamburger{
+    #hamburger{
         display: block;
+        fill: #fff;
     }
 
-    .navs{
+     .header div nav ul{
         display: none;
-    }
-
-    .navs ul{
-        display: flex;
         background: rgb(92,42,157);
         position: absolute;
         top: 70px;
         right: 0;
         left: 0;
-        flex-direction: column;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center; 
         padding: 30px;
+        text-align: center;
         animation-name: scroll-down;
         animation-duration: 1s;
         height: 255px;
+    }
+
+    .header div nav ul.items{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
     }
 
     @keyframes scroll-down {
@@ -88,16 +108,12 @@ a:hover{
         to {
             opacity: 1;
         }
-    }
+    } 
 
-    .navs li{
+    .header div nav ul li{
         margin: 10px auto;
         animation-name: example;
         animation-duration: 2s;
-    }
-
-    .navs.items{
-        display: block;
     }
     
     a {
@@ -159,8 +175,15 @@ a:hover{
         background: url('/img/Rectangle 5.svg');
         height: 100% ; 
         padding-bottom: 50px;
-        /* margin-top: -150px;  */
+        margin-top: -150px; 
         width: 100%; 
+    }
+
+    nav ul li a:hover{
+        background: #A458DE;
+        border-radius: 20px;
+        color: #fff;
+        padding:5px 10px;
     }
 
     .osumi{
@@ -168,10 +191,16 @@ a:hover{
         height: auto;
     }
 
+    .ilu-vector1, .ilu-vector2, .ilu-vector3, .ilu-vector4{
+        height:40%;
+        width: 40%;
+        fill: #5C2A9D;
+    }
+
     .vector{
         height: 180px;
         width: 130px;
-        margin-top: -70px;
+        margin-top: -10%;
     }
 
     .box-containers {
@@ -196,48 +225,36 @@ a:hover{
         -webkit-transform: scale(1.3);
         transform: scale(1.15);
         box-shadow: 0px 3px 10px rgba(0, 0, 0, .35);
-        z-index: 9999 !important;
+        z-index: 9999;
     }
 
-    .box-containers div img{
+    .box-containers div span{
         display: flex;
         justify-content: center;
-        width: 100%;
-        height: 100%;
         margin: 0 auto;
         margin-bottom: 5px;
-        border-radius: 45px;
         padding: 10px;
     }
 
     .ilu-vector1{
-        background: #FFE9E3;
-        height: 90px !important;
-        width: 90px !important;
-        border-radius: 45px !important;
+        height: 20%;
+        width: 20%;
     }
 
     .ilu-vector2 {
-        background: #D8D1E8;
-        height: 90px !important;
-        width: 90px !important;
-        border-radius: 45px !important;
-        padding: 15px !important;
+        height: 20%;
+        width: 20% ;
     }
 
     .ilu-vector3 {
-        background: #D6EBEA;
-        height: 90px !important;
-        width: 90px !important;
-        border-radius:45px !important;
-        padding: 15px !important;
+       
+        height: 20% ;
+        width: 20% ;
     }
 
     .ilu-vector4{
-        background: #D8D1E8;
-        height: 90px !important;
-        width: 90px !important;
-        border-radius: 45px !important;
+        height: 20% ;
+        width: 20% ;
     }
 
     p{
@@ -296,7 +313,6 @@ a:hover{
     .quotes{
         display: flex;
         margin: 0 20px;
-        /* justify-content: space-around; */
     }
 
     .contact{
@@ -384,6 +400,11 @@ a:hover{
         align-items: center;
     }
 
+    .social-cont{
+        margin-top: 30%;
+        margin-bottom: 50%;
+    }
+
     .social{
         display: none;
     }
@@ -404,14 +425,28 @@ a:hover{
         height: 450px;
     }
 
-    .navs ul li a:hover{
-        letter-spacing: 3px;
+    nav li a{
+        font-size:1.4rem;
+    }
+
+    nav ul{
+        margin-top: 10px;
+    }
+
+    nav ul li a:hover{
+        background: #A458DE;
+        border-radius: 20px;
+        color: #fff;
+        padding:5px 20px;
+    }
+
+    .header div nav ul{
+        display: flex !important;
     }
 
     .social-cont{
         display: flex;
         margin: 0 30px;
-        /* justify-content: space-around; */
     }
 
     .social-cont div h3{
@@ -428,6 +463,11 @@ a:hover{
 
     .header{
         margin-bottom: 50px;
+    }
+
+    .social-cont{
+        margin-top: 7%;
+        /* margin-bottom: -5%; */
     }
 
     .social-cont div form input{
@@ -473,7 +513,6 @@ a:hover{
 
     .wave{
         margin-top: -5px;
-        /* width: 100%; */
     } 
 
     .desktop{
@@ -491,49 +530,54 @@ a:hover{
 
     .vector{
         position: absolute;
-        top: 600px;
+        top: 100%;
         left: 0;
         right: 0;
         bottom: 0;
     }
 
     .box-containers {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 100%;
-        justify-content: space-around;
+       display: flex;
+       width: 100%;
+       justify-content: space-around;
+       flex-wrap: wrap;
+       padding: 3% 5%;
     }
  
     .box-containers div{
         background: #f9f9fA;
-        width: 25%;
+        border-radius: 6px;    
+        text-align: center;
         display: flex;
         flex-direction: column;
-        border-radius: 6px;
-        margin: 8px 25px;
-        text-align: center;
+        width: 25%;
+        margin: 10px 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1%;
         transition: transform 1s;
     }
- 
-    .box-containers div:hover{
+
+    .box-containers div:hover {
         -ms-transform: scale(1.5);
         -webkit-transform: scale(1.5);
-        transform: scale(1.25);
-        transform: scale(1.25);
+        transform: scale(1.3);
         box-shadow: 0px 3px 10px rgba(0, 0, 0, .35);
         z-index: 9999 !important;
     }
 
-    .box-containers div img{  
-        display: flex;
-        width: 30%;
-        margin: 0 auto;
-        margin-bottom: 5px;
-        border-radius: 45px;
-        padding: 10px;
+    .box-containers div span{  
+       display: flex;
+       justify-content: center;
+       align-items: center;
     }
 
+    .ilu-vector1, .ilu-vector2, .ilu-vector3, .ilu-vector4{
+        height:40%;
+        width: 40%;
+        fill: #5C2A9D;
+    }
+    
     .email::-webkit-input-placeholder{
         color: black !important;
     }
@@ -585,7 +629,6 @@ a:hover{
         width: 50%;
         right: 0;
         height: 100%;
-        /* margin-left: 100px; */
         align-self: center;
     }
 
@@ -615,7 +658,6 @@ a:hover{
         background: #5C2A9D;
         height: 100%;
         padding: 50px 100px;
-        /* text-align: center; */
     }
 
     .contact-div{
@@ -627,7 +669,6 @@ a:hover{
 
     .contact-div b{
         color: #fff;
-        /* font-weight: lighter; */
         font-weight: 400;
         font-size: 2rem;
     }
@@ -714,7 +755,6 @@ a:hover{
         right: 30px;
         display: flex;
         flex-direction: column;
-        /* background: #fff; */
         background: #A458DE;
         padding: 20px;
         width: 250px;
@@ -732,7 +772,7 @@ a:hover{
 }
 
 
-@media all and (min-width: 650px) and (max-width:1085px) {
+@media all and (min-width: 650px) and (max-width:1300px) {
     .social-media{
         width: 350px;
         height: 300px;
@@ -741,7 +781,6 @@ a:hover{
     .social-cont{
         display: flex;
         margin: 0 30px;
-        /* justify-content: space-around; */
     }
 
     .social-cont div h3{
@@ -750,6 +789,7 @@ a:hover{
 
     .header{
         margin-bottom: 50px;
+        /* background: red; */
     }
 
     .social{
@@ -760,7 +800,7 @@ a:hover{
         width: 150px;
         height: 150px;
         position: absolute;
-        top: 450px;
+        top: 80%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -796,13 +836,11 @@ a:hover{
     display: flex;
     justify-content: center;
 }
-
+/* move-up */
 .moveup{
     transform: rotate(180deg);
     position: relative;
     top: 80px;
-    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, .26); */
-    /* filter: drop-shadow(0 0 20 rgba(0, 0, 0, .25)); */
     -webkit-filter: drop-shadow(0 0 20px #9B51E0);
     filter: drop-shadow(0 0 5px #9B51E0);
 }
@@ -818,9 +856,8 @@ html{
 #services, #testimonials, #contact{
     height: 100%;
 }
-
+ 
 @media all and (max-width: 360px) {
-
     .div form{
         display: flex;
         flex-direction: column;
@@ -867,3 +904,12 @@ svg{
     width: 100%;
     height: auto;
 }
+
+
+
+
+
+
+
+
+
