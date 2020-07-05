@@ -264,56 +264,27 @@ a:hover{
     b{
         font-weight: 500 !important;
     }
-
-    .testimonials{
-        background: #F9F9FA;
-        margin-left: 20px;
-        margin-bottom: 40px;
+    
+    .mySlides{
+        display: flex;
+        flex-direction: column;
+        width: 80% !important;
+        margin: auto !important;
     }
     
-
-    .testimonials h3{
-        font-size: 24px;
-        color: #9B51E0;
-        font-weight: 600;
-        font-family: sans-serif;
+    .fades .img{
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 3%;
     }
 
-    .testimonials h2{
-        font-size: 2.2rem;
-        color: #212529;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }   
-
-    .hotels{
-        display: flex;
+    .testimonials p{
+        font-size: 1rem !important;
     }
 
-    .hotels img{
-        margin-right: 20px;
-        margin-bottom: 40px;
-    }
-
-    .hotels1{
-        font-weight: lighter;
-    }
-
-    .el{
-        width: 7px;
-        height: 7px;
-    }
-
-    .quotes-originally{
-        width:90px;
-        height: 90px;
-        margin-right: 40px;
-    }
-
-    .quotes{
-        display: flex;
-        margin: 0 20px;
-    }
+    /* .slideshow-container{
+        display: none;
+    } */
 
     .contact{
         background: #5C2A9D;
@@ -331,18 +302,25 @@ a:hover{
 
     .contact p{
         color: #fff;
+        margin-top: 30px;
+        font-size: .9rem;
     }
 
     .contact form{
         display: flex;
         flex-direction: column;
         width: 90%;
-        margin: auto;
+        margin: 50px auto;
+    }
+
+    form span{
+        display: flex;
     }
 
     form img{
         width: 30px;
         height: 30px;
+        margin-right: 5%;
     }
 
     .contact form input,textarea{
@@ -371,9 +349,6 @@ a:hover{
     .footer-like{
         position: relative;
         padding: 100px 20px;
-        background: url('/img/map-\(2\).jpg');
-        background-position: center;
-        background-size: cover;
     }
 
     .sitemap{
@@ -491,6 +466,10 @@ a:hover{
         position: relative;
     }
 
+    .mySlides{
+        display: none;
+    }
+
     .one{
         top: -15px;
         left: 5px;
@@ -582,76 +561,9 @@ a:hover{
         color: black !important;
     }
 
-    .testimonials{
-        display: flex;
-        height: auto;
-        margin-bottom: 0px;
-    }
-
-    .woman{
-        width: 50%;
-        left: 0;
-        height: 100%;
-    }
-
-    .woman img{
-        height: 440px;
-        width: auto;
-    } 
-
-    .hotels img{
-        margin-right: 20px;
-        margin-bottom: 40px;
-    }
-
-    .hotels1{
-        font-weight: lighter;
-    }
-
     .el{
         width: 7px;
         height: 7px;
-    }
-
-    .quotes-originally{
-        width:90px;
-        height: 90px;
-        margin-right: 40px;
-    }
-
-    .quotes{
-        display: flex;
-        margin: 0 20px;
-        justify-content: space-around;
-    }
-
-    .testimonial2{
-        width: 50%;
-        right: 0;
-        height: 100%;
-        align-self: center;
-    }
-
-    .testimonials h3{
-        font-size: 24px;
-        color: #9B51E0;
-        font-weight: 600;
-    }
-
-    .testimonials h2{
-        font-size: 2.2rem;
-        color: #212529;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }   
-
-    .hotels{
-        display: flex;
-    } 
-
-    .hotels img{
-        margin-right: 20px;
-        margin-bottom: 40px;
     }
     
     .contact{
@@ -685,13 +597,20 @@ a:hover{
     .contact form{
         display: flex;
         flex-direction: column;
+        justify-content: start;
         width: 60%;
         margin: auto;
+    }
+
+    .contact p{
+        font-size: 1rem;
+        margin-top: 20px;
     }
 
     form img{
         width: 40px;
         height: 40px;
+        margin-right: 5%;
     }
 
     .contact form input,textarea{
@@ -725,7 +644,7 @@ a:hover{
     .footer-like{
         position: relative;
         padding: 100px 20px;
-        background: url('/img/map-\(2\).jpg');
+        /* background: url('/img/map-\(2\).jpg'); */
         background-position: center;
         background-size: cover;
     }
@@ -817,11 +736,6 @@ a:hover{
         display: none;
     }
 
-   .testimonial2{
-       padding: 20px;
-       width: 100%;
-       text-align: center;
-   }  
 
    .last-item {
     display: none;
@@ -829,6 +743,23 @@ a:hover{
 
     .just-mobile{
         display: none;
+    }
+
+    .mySlides{
+        display: flex;
+        flex-direction: column;
+        width: 80% !important;
+        margin: auto !important;
+    }
+    
+    .fades .img{
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 3%;
+    }
+
+    .testimonials p{
+        font-size: 1rem !important;
     }
 }
 
@@ -853,7 +784,7 @@ html{
     height: 100%;
 }
 
-#services, #testimonials, #contact{
+#services, #slideshow-container, #contact{
     height: 100%;
 }
  
@@ -890,10 +821,6 @@ html{
         width: 20px;
     }
 
-    .testimonials h2{
-        font-size: 25px;
-    }
-
     body{
         width:100vw ;
     }
@@ -905,11 +832,121 @@ svg{
     height: auto;
 }
 
+.submit:hover{
+    background: #A458DE;
+    animation-name: animates;
+    animation-duration: 1s;
+}
 
+@keyframes animates{
+    from{
+        opacity: 0;
+    }
 
+    to{
+        opacity: 1;
+    }
+}
 
+.fades{
+    display: flex ;
+    width: auto ;
+    height: auto ;
+}
 
+.fades .img{
+    width: 50%;
+    height: 100%;
+}
 
+.slideshow-container{
+    width: 100%;
+    position: relative;
+    margin: auto;
+    height: 100%;
+}
 
+.mySlides{
+    display: none ;
+}
 
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black !important;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
 
+.next:hover, .prev:hover{
+    color: #fff !important;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+} 
+ 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fades {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.testimonials{
+    margin-left: 2%;
+    height: auto;
+    width: 100%;
+}
+
+.space-quote{
+    display: flex;
+}
+
+.quotes{
+    width: 15%;
+    height: 10%;
+    margin-right: 50px;
+}
+
+.testimonials p{
+    font-size: 1.2rem;
+    margin-top: 7%;
+}

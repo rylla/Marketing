@@ -27,3 +27,36 @@ window.onscroll = function() {
 
     prevScrollpos = currentScrollPos;
 }
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n); // slideIndex = 1 + 1 or -1 + 1 
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n); // 
+}
+
+function showSlides(n) {
+  var i;
+  // get the divs
+  var slides = document.getElementsByClassName("mySlides");
+
+  // get the dots
+  var dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {slideIndex = 1} //if n > 3, slideIndex = 1
+  if (n < 1) {slideIndex = slides.length} //if n < 1, slideIndex = 3
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+    }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "flex"; 
+  dots[slideIndex-1].className += " active";
+}
