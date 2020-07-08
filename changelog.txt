@@ -1,0 +1,7 @@
+CHANGELOG
+
+July 7 - 8 2020
+Changed non-specific selectors to specific, and added general rules for non specific ones
+Organized code to be sorted by section
+Added dividers with comments and formatted code to be consistent
+Condensed duplicates from multiple queries into single query
